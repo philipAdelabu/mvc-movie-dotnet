@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
 namespace MvcMovie.Models;
 
 public class Movie
@@ -14,7 +16,6 @@ public class Movie
     [StringLength(100)]
     public string? Genre { get; set; }
 
-    [Range(1, 100)]
-    [DataType(DataType.Currency)]
+    [Column(TypeName = "decimal(18, 2)"), Range(1, 300)]
     public decimal Price { get; set; }
 }
